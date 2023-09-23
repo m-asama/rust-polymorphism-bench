@@ -69,6 +69,18 @@ pub enum EnmObj {
     EnmObj5(EnmObj5),
 }
 
+impl EnmObj {
+    fn ret(&self) -> usize {
+        match &self {
+            EnmObj::EnmObj1(x) => x.ret(),
+            EnmObj::EnmObj2(x) => x.ret(),
+            EnmObj::EnmObj3(x) => x.ret(),
+            EnmObj::EnmObj4(x) => x.ret(),
+            EnmObj::EnmObj5(x) => x.ret(),
+        }
+    }
+}
+
 ... (省略) ...
 
 pub fn run(enmobjs: &Vec<EnmObj>) -> usize {
